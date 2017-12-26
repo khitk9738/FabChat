@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.akki.fab.chat.StatusActivity">
+
+
+    <include
+        android:id="@+id/status_appbar"
+        layout="@layout/appbar_layout" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/status_input"
+        android:layout_below="@+id/status_appbar"
+        android:layout_margin="10dp"
+
+       >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:hint="Status" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/status_change_but"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Change Status"
+        android:textColor="#fff" />
+</RelativeLayout>

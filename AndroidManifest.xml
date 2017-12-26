@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.akki.fab.chat">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".ChatApp"
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".StartActivity" />
+
+        <service android:name=".FirebaseMessagingServiceClass">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".StartActivity" />
+        <activity
+            android:name=".ListUsersActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AboutUs"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".StartActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity
+            android:name=".StatusActivity"
+            android:parentActivityName=".SettingsActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name=".UsersActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ProfileActivity">
+            <intent-filter>
+                <action android:name="com.akki.fab.chat_TARGET_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ChatActivity"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="com.akki.fab.chat_TARGET_MNOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddPostActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CommentsActivity"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="com.akki.fab.chat_TARGET_CNOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserFriendsActivity"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserMomentsActivity"
+            android:parentActivityName=".MainActivity" />
+
+    </application>
+
+</manifest>

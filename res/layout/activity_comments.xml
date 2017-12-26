@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.akki.fab.chat.CommentsActivity">
+
+    <include layout="@layout/appbar_layout" android:id="@+id/comments_appbar"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:id="@+id/comment_on_bar"
+        android:elevation="10dp"
+        android:layout_below="@id/comments_appbar"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center_vertical"
+            android:background="@color/colorPrimaryDark"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="#fff"
+                android:text=""
+                android:layout_toLeftOf="@+id/comment_on_image"
+                android:id="@+id/comment_on_person"
+
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="#fff"
+                android:text=""
+                android:layout_below="@+id/comment_on_time"
+                android:layout_toLeftOf="@+id/comment_on_image"
+                android:id="@+id/comment_on_tv"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/comment_on_time"
+                android:text="time"
+                android:layout_below="@+id/comment_on_person"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:textSize="12dp"/>
+
+            <ImageView
+                android:layout_width="60dp"
+                android:id="@+id/comment_on_image"
+                android:layout_height="60dp"
+                android:layout_marginRight="5dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_above="@+id/Add_comment_et"
+        android:layout_below="@+id/comment_on_bar"
+        android:id="@+id/comments_rv">
+
+    </android.support.v7.widget.RecyclerView>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Add_comment_et"
+        android:hint="Add comment.."
+        android:textColorHint="@color/colorPrimary"
+        android:textColor="#fff"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:textSize="21dp"
+        android:padding="10dp"
+        android:layout_above="@+id/sub_comment_but"
+        android:background="@color/colorPrimaryDark"/>
+
+    <Button
+        android:id="@+id/sub_comment_but"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bgwhite"
+        android:fontFamily="sans-serif-condensed"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Comment"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
